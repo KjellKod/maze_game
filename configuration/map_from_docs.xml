@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE map
+[
+<!ELEMENT map (room*)>
+
+<!ELEMENT room (object*)>
+<!ATTLIST room id       ID      #REQUIRED>
+<!ATTLIST room name     CDATA   #REQUIRED>
+<!ATTLIST room north    IDREF   #IMPLIED>
+<!ATTLIST room south    IDREF   #IMPLIED>
+<!ATTLIST room east     IDREF   #IMPLIED>
+<!ATTLIST room west     IDREF   #IMPLIED>
+<!ELEMENT object (#PCDATA)>
+<!ATTLIST object name ID #REQUIRED>
+]>
+
+<map>
+<room id="1" name="Hallway" north="2"/>
+<room id="2" name="Dining Room" south="1" west="3" east="4"/>
+<room id="3" name="Kitchen" east="2"><object name="Knife"/></room>
+<room id="4" name="Sun Room" west="2"><object name="Potted Plant"/></room>
+</map>

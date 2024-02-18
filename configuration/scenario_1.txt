@@ -1,0 +1,7 @@
+scullery
+Plate
+Fishing-Rod
+Lamp
+Book
+Pickaxe
+Pine-cone
