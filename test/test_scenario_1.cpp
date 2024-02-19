@@ -13,7 +13,7 @@ namespace {
 
 
 
-TEST(DISABLED_FigureOut_XML, PrintOut_LogRhythm_map_xml_example)
+TEST(FigureOut_XML, PrintOut_LogRhythm_map_xml_example)
 {
   pugi::xml_document doc;
   //ASSERT_TRUE(doc.load_file(file_map_xml.c_str()));

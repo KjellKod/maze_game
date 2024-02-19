@@ -21,13 +21,13 @@ std::string raw{"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>"\
 }
 
 
-TEST(DISABLED_FigureOut_XML, PrintOut_pugixml_example)
+TEST(FigureOut_XML, PrintOut_pugixml_example)
 {
   using namespace std;
   using namespace dummy_for_verifying_pugixml;
   pugi::xml_document doc;
   auto result = doc.load_string(raw.c_str());
-  ASSERT_TRUE(result == pugi::status_ok);
+  ASSERT_TRUE(result.status == pugi::status_ok) << result.description();
   pugi::xml_node tools = doc.child("Profile").child("Tools");
   for (pugi::xml_node tool = tools.first_child(); tool; tool = tool.next_sibling())
   {

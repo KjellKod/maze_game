@@ -55,7 +55,7 @@ TEST(Graph, getAdjacent) {
   ASSERT_FALSE(graph.areAdjacent(node_1, node_2));
 }
 
-TEST(DISABLED_Graph, printGraph)
+TEST(Graph, printGraph)
 {
   Graph graph;
   auto node_start = createNode({"-kitchen-"}, {"Fancy Kitchen"}, HasItems::WithItems);

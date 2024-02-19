@@ -3,13 +3,6 @@
 #include <algorithm>
 #include "parse_scenario.hpp"
 
-TEST(DUMMY, HelloWorld)
-{
-  const char* str = "Hello World";
-  ASSERT_STREQ(str, "Hello World");
-}
-
-
 namespace scenario_0
 {
   std::string file_0{"../configuration/scenario_from_docs.txt"};
