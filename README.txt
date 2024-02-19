@@ -1,23 +1,7 @@
 To compile and use the tests
 --------------------------------
-1. Unzip the gtest-1.6.0__stripped.zip.   to  gtest-1.6.0__stripped
-   Unzip the pugixml-1.2.zip    to    pugixml-1.2
-
-2. In the root directory create a new folder named 'build'
-
-3. From the 'build' folder run command "cmake .."   
-This will create necessary build files for whatever platform you are running on and put these temporary files in the build directory. 
-
-4. Next build step is platform dependent
-  linux: cmake ..; make
-  
-  windows: cmake -G "Visual Studio 11" ..
-           msbuild maze.sln
-
-### Mac or Linux with Clang - not yet configured.
-
-
-
+1. In repository root directory: mkdir build && cd build && cmake && make -j
+2. Run tests with `./UnitTestRunner` or `make test` or `ctest -v` or `ctest -V`
 
 Not necessary to read: Only if you want to know about my 
 Code Choices and Improvements
