@@ -1,3 +1,9 @@
+# 2024-02-19
+For fun I wanted to see how I would update the build structure of an old programming/interview challenge I was given at LogRhythm many 
+year ago. The programming challenge and programming is obsolete at that company and for that reason it's fine to publish it. It's nothing amazing... above all its interesting to see how I coded 11 years ago compared to now. 
+
+
+
 To compile and use the tests
 --------------------------------
 1. In repository root directory: mkdir build && cd build && cmake && make -j
