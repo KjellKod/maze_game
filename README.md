@@ -7,7 +7,15 @@ year ago. The programming challenge and programming is obsolete at that company 
 To compile and use the tests
 --------------------------------
 1. In repository root directory: mkdir build && cd build && cmake && make -j
-2. Run tests with `./UnitTestRunner` or `make test` or `ctest -v` or `ctest -V`
+2. Run tests with one of
+
+`./UnitTestRunner`
+
+`make test`
+
+`ctest -v`
+
+`ctest -V`
 
 Not necessary to read: Only if you want to know about my 
 Code Choices and Improvements
