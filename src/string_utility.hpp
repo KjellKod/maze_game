@@ -4,8 +4,8 @@
 #include <string>
 
 namespace string_utility {
-std::string trim(const std::string& str, const std::string& whitespace = " \t");
-std::string tolower(const std::string& data);
-}
+   std::string trim(const std::string& str, const std::string& whitespace = " \t");
+   std::string tolower(const std::string& data);
+}  // namespace string_utility
 
-#endif // STRING_UTILITY_HPP
+#endif  // STRING_UTILITY_HPP

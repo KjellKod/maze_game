@@ -6,7 +6,7 @@
 
 namespace parse_map {
 
-  Graph loadGame(std::string path_to_map);
+   Graph loadGame(std::string path_to_map);
 }
 
-#endif // PARSE_MAP_HPP
+#endif  // PARSE_MAP_HPP
