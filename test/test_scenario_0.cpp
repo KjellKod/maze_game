@@ -55,6 +55,7 @@ TEST(Scenario_0___Read_From_File__then_Parsing, Expecting___AllContents_To_Be_Va
   using namespace parse_scenario;
   using namespace scenario_0;
   auto raw = readFile(file_0);
+  std::cout <<"raw is: " << raw << std::endl;
   ASSERT_FALSE(raw.empty());
   Content content = extractContentFromRaw(raw);
 

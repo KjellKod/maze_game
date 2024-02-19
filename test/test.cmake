@@ -15,21 +15,22 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 file(GLOB TEST_SRC_FILES "test/*.cpp")
-message("test files: ${TEST_SRC_FILES}")
-include_directories(${PROJECT_SRC} ${PROJECT_SRC}/../test)
 set(TestRunner UnitTestRunner)
-
-message(" include directories: ${PROJECT_SRC} ${PROJECT_SRC}/../test ${PROJECT_SRC}/../benchmark")
 enable_testing()
-add_executable(UnitTestRunner 
-   ${TEST_SRC_FILES}
-)
+
+message(" include directories: ${PROJECT_SRC} ${PROJECT_SRC}/../test")
+enable_testing()
+add_executable(${TestRunner}  ${TEST_SRC_FILES})
+target_include_directories(${TestRunner}  PRIVATE 
+   ${CMAKE_CURRENT_SOURCE_DIR}/src
+   ${pugixml_SOURCE_DIR}/src)
 
 target_link_libraries(
-   UnitTestRunner 
-   ${Q_LIBRARY}
+   ${TestRunner}  
+   mazelib
+   pugixml
    GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(UnitTestRunner)
+gtest_discover_tests(${TestRunner} )

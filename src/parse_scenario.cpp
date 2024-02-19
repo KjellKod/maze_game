@@ -1,6 +1,10 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <filesystem>
+#include <fstream>
+#include <iterator>
+#include <string>
 #include "parse_scenario.hpp"
 #include "string_utility.hpp"
 
@@ -26,23 +30,21 @@ Content extractContentFromRaw(const std::string& raw) {
 }
 
 
-std::string readFile(const std::string& filename){
-  using namespace std;
-  ifstream file(filename);
-  if (!file)
-    return {""};
+std::string readFile(const std::string& filename) {
+    std::filesystem::path filepath{filename};
+    if (!std::filesystem::exists(filepath)) {
+        std::cerr << "Could not open file: " << filename << std::endl;
+        return {};
+    }
 
-  file.seekg(0, ios::end);
-  auto size = file.tellg();
-  file.seekg(0, ios::beg);
+    std::ifstream file(filepath, std::ios::binary);
+    if (!file) {
+        std::cerr << "Could not open file: " << filename << std::endl;
+        return {};
+    }
 
-  vector<char> buffer(size);
-  file.read(&buffer[0], size);
-
-  stringstream content;
-  content.rdbuf()->pubsetbuf(&buffer[0], size);
-
-  return content.str();
+    std::string content{std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>()};
+    return content;
 }
 
 Content loadScenario(const std::string& filename) {
